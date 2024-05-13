@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>may 13</title>
+</head>
+<body>
+    <h1>Movie recommendation System</h1>
+    <label>Select Genre:</label> 
+    <select id="genreSelect" onclick="filergenre1()">
+        <option value="all">All</option>
+        <option value="comedy">Comedy</option>
+        <option value="love">Love</option>
+        <option value="action">Action</option>
+      </select>
+      <div class="dispalyMovies"id="dispalyMovies" >
+
+    
+
+
+
+
+      </div>
+      <script>
+
+    var films;
+    const movies=[
+        {title:"leo", genre:"action"},
+        {title:"beast", genre:"action"},
+        {title:"sachin", genre:"comedy"},
+        {title:"vaseegara", genre:"comedy"},
+        {title:"kaadhalukku_mariyadhai", genre:"love"},
+        {title:"shajahan", genre:"love"}
+    ]
+
+    films = movies.map( movie =>{
+        return (
+        `<h1>${movie.title}</h1> <p>${movie.genre}</p>`
+        );
+    });
+
+    var dis = document.getElementById("dispalyMovies");
+    dis.innerHTML = films.join("");
+
+
+    function filergenre1(){
+        var select = document.getElementById("genreSelect").value
+        var mov = films.filter(movie=>{
+            return (select === movie.genre)
+        });
+    } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </script>
+</body>
+</html>
